@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Start.css">
     <title>Document</title>
+    <style>
+        .content {
+            opacity: 0; /* Initially hide the button */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
+        }
+        .content.show {
+            opacity: 1; /* Fully visible when the class is added */
+        }
+    </style>
 </head>
 <body>
     
@@ -17,15 +26,23 @@
 
     <div class="container">
 
-        <video autoplay muted plays-inline class="background-clip">
+        <video autoplay muted playsinline class="background-clip" id="background-video">
             <source src="video.mov" type="video/mp4">
         </video>
 
-        <div class="content">
-            <img src="SADDSA00086454.png" alt="Description of image" style="width: 95%; max-width: 600px;">
+        <div class="content" id="explore-button">
             <a href="Home.html">Explore Now</a>
         </div>
     </div>
+
+    <script>
+        const video = document.getElementById('background-video');
+        const button = document.getElementById('explore-button');
+
+        video.addEventListener('ended', function() {
+            button.classList.add('show'); // Add the class to trigger the transition
+        });
+    </script>
 
 </body>
 </html>
