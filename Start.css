@@ -33,7 +33,7 @@
     font-family: product sans;
 }
 
-.content a{
+.content a {
     font-size: 23px;
     color: #fff;
     text-decoration: none;
@@ -42,7 +42,9 @@
     border-radius: 50px;
     transition: 0.3s;
     font-family: product sans;
+    transform: translateY(100px); /* Moves the element down by 50 pixels */
 }
+
 
 .content a:hover{
     background-color: #b4d6ff;
