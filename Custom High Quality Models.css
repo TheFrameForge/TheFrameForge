@@ -124,19 +124,20 @@ p {
 .hero .btn {
     padding: 10px 20px;
     background-color: #c5ffff00;
-    color: rgb(255, 255, 255);
+    color: rgb(240, 240, 240);
     font-size: 1.2em;
     border-radius: 115px;
-    transition: background-color 0.3s, border-radius 0.6s ease;
+    transition: all 0.7s ease;
     display: inline-block;
     backdrop-filter: blur(15px);
     font-family: IBM;
 }
 
 .hero .btn:hover {
-    background-color: #f8cb0075;
-    border-radius: 150px;
-    backdrop-filter: blur(1000000px);
+    background-color: #cfbc7d;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 30px #cfbc7d; /* Increased red glow */
 }
 
 /* About Section */
@@ -171,13 +172,13 @@ p {
 }
 
 .service {
-    background-color: #bb9929;
+    background-color: #cfbc7d;
     padding: 20px;
     border-radius: 35px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 30px rgba(159, 202, 230, 0.7); /* Increased red glow */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 30px #cfbc7d; /* Increased red glow */
     transition: transform 0.3s ease;
     color: #979797;
-    color: #f3ed94;
+    color: #4444449f;
 }
 
 .service:hover {
@@ -209,10 +210,10 @@ p {
 .order-section .btn {
     padding: 12px 24px;
     background-color: #000000;
-    color: rgb(211, 200, 135);
+    color: #e7dbb1;
     font-size: 1.5em;
     border-radius: 5px;
-    transition: background-color 0.3s, border-radius 0.3s;
+    transition: all 0.7s ease;
     text-align: center;
 }
 
@@ -222,10 +223,12 @@ p {
 }
 
 .order-section .btn:hover {
-    background-color: #585757;
+    background-color: #2c4d37;
     border-radius: 35px;
     color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 30px #2c4d37; /* Increased red glow */
 }
+
 
 /* Contact Form */
 form {
@@ -260,7 +263,7 @@ form textarea {
 form button {
     width: 100%;
     padding: 15px;
-    background-color: #3c528f; /* Strong blue button for contrast */
+    background-color: #cfbc7d; /* Strong blue button for contrast */
     color: #464646; /* White text */
     border: none;
     border-radius: 15px;
@@ -270,10 +273,10 @@ form button {
 }
 
 form button:hover {
-    background-color: #ffffff; /* Darker blue on hover */
+    background-color: #fff3cd; /* Darker blue on hover */
     color: #000000;
     transform: translateY(-10px);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 30px rgba(255, 255, 255, 0.7); /* Increased red glow */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 30px #cfbc7d; /* Increased red glow */
 }
 
 /* Responsive Design */
