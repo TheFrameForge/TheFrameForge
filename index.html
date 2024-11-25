@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="Start.css">
     <title>Document</title>
     <style>
+        @font-face {
+    font-family: 'IBM';
+    src: url(IBMPlexSans-Bold.ttf);
+}
         .content {
             opacity: 0; /* Initially hide the button */
             transition: opacity 0.5s ease; /* Smooth transition for opacity */
@@ -14,11 +18,101 @@
         .content.show {
             opacity: 1; /* Fully visible when the class is added */
         }
+        .skip-button {
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Distance from the bottom */
+            right: 20px; /* Distance from the right */
+            padding: 20px 40px; /* Padding for the button */
+            background-color: #d1d1d157; /* Button color */
+            color: white; /* Text color */
+            border: white; /* No border */
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            z-index: 1000; /* Ensure it is above other elements */
+            border-width: 2px;
+            font-family: IBM;
+            transition: all 0.7s ease;
+            backdrop-filter: blur(50px);
+        }
+        .skip-button:hover {
+            background-color: #52525257; /* Darker shade on hover */
+            border-radius: 50px;
+        }
+
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;    /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;      /* Center text (if any) */
+}
+.content h1{
+    font-size: 95px;
+    color: #fff;
+    margin-bottom: 50px;
+    font-family: product sans;
+}
+
+.content a {
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #0e4012;
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition: all 0.7s ease;
+    font-family: product sans;
+    transform: translateY(100px); /* Moves the element down by 50 pixels */
+}
+
+
+.content a:hover{
+    background-color: #b4d6ff;
+    color: #565656;
+    border-radius: 50px;
+}
+
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio:16/9) {
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9) {
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
     </style>
 </head>
 <body>
     
-    <link rel="preload" href="moreimg/3dmodelfram.png" as="image">
+    <link rel="preload" href="moreimg/forgefram_1.2.1.jpg" as="image">
     <link rel="preload" href="moreimg/thumbfull_1.4.1.jpg" as="image">
     <link rel="preload" href="moreimg/timine_1.2.3.jpg" as="image">
     <link rel="preload" href="moreimg/LOGOS1.png" as="image">
@@ -33,15 +127,24 @@
         <div class="content" id="explore-button">
             <a href="Home.html">Explore Now</a>
         </div>
+
+        <button class="skip-button" id="skip-button">Skip</button>
     </div>
 
     <script>
         const video = document.getElementById('background-video');
         const button = document.getElementById('explore-button');
+        const skipButton = document.getElementById('skip-button');
 
-        video.addEventListener('ended', function() {
-            button.classList.add('show'); // Add the class to trigger the transition
-        });
+video.addEventListener('ended', function() {
+    button.classList.add('show'); // Show the explore button when the video ends
+});
+
+skipButton.addEventListener('click', function() {
+    video.currentTime = video.duration; // Set the video to the end
+    video.pause(); // Pause the video if needed
+    button.classList.add('show'); // Show the explore button when the skip button is clicked
+});
     </script>
 
 </body>
